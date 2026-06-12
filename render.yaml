@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: day12-production-agent
+    runtime: docker
+    plan: free
+    region: singapore
+    rootDir: 06-lab-complete
+    dockerCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 1 --timeout-graceful-shutdown 30
+    healthCheckPath: /health
+    maxShutdownDelaySeconds: 30
+    autoDeployTrigger: commit
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: APP_VERSION
+        value: "2.0.0"
+      - key: AGENT_API_KEY
+        sync: false
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "10"
+      - key: MONTHLY_BUDGET_USD
+        value: "10"
+      - key: SESSION_TTL_SECONDS
+        value: "86400"
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: day12-agent-cache
+          property: connectionString
+
+  - type: keyvalue
+    name: day12-agent-cache
+    plan: free
+    region: singapore
+    ipAllowList: []
+    maxmemoryPolicy: allkeys-lru

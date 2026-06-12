@@ -8,4 +8,5 @@ venv/
 .git/
 *.md
 tests/
+check_production_ready.py
 .DS_Store
