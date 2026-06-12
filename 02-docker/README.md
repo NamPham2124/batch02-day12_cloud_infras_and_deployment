@@ -30,6 +30,7 @@ docker build -f 02-docker/develop/Dockerfile -t agent-develop .
 docker images agent-develop
 
 # Chạy container
+<<<<<<< HEAD
 # -p 8000:8000 : map port 8000 của máy host → port 8000 trong container
 # -d           : chạy ở chế độ detached (nền), terminal không bị block
 # agent-develop: tên image đã build ở bước trên
@@ -43,6 +44,9 @@ docker ps
 # Hữu ích để debug, kiểm tra file, xem log, hoặc chạy lệnh trực tiếp trong container
 
 docker exec -it <container-id> sh
+=======
+docker run -p 8000:8000 agent-develop
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 
 # Test
 curl http://localhost:8000/health

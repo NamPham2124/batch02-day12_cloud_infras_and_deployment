@@ -18,7 +18,11 @@ MOCK_RESPONSES = {
 }
 
 
+<<<<<<< HEAD
 def ask(question: str, delay: float = 3.0) -> str:
+=======
+def ask(question: str, delay: float = 0.1) -> str:
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
     """
     Mock LLM call với delay giả lập latency thật.
     """

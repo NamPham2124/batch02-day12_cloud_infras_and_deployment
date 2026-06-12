@@ -12,12 +12,20 @@
 ```
 develop/
 ├── app.py          # ❌ Anti-patterns: hardcode secrets, no config, no health check
+<<<<<<< HEAD
+=======
+├── .env.example
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 └── requirements.txt
 ```
 
 ### Chạy thử
 ```bash
+<<<<<<< HEAD
 cd develop
+=======
+cd basic
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 pip install -r requirements.txt
 python app.py
 # Truy cập: http://localhost:8000
@@ -44,7 +52,11 @@ production/
 
 ### Chạy thử
 ```bash
+<<<<<<< HEAD
 cd production
+=======
+cd advanced
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 pip install -r requirements.txt
 cp .env.example .env
 # Sửa .env nếu cần

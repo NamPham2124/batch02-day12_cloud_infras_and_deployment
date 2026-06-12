@@ -13,12 +13,20 @@
 ```
 develop/
 ├── app.py              # Agent với API Key auth
+<<<<<<< HEAD
+=======
+├── test_auth.py        # Test script
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 └── requirements.txt
 ```
 
 ### Chạy thử
 ```bash
+<<<<<<< HEAD
 cd develop
+=======
+cd basic
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 pip install -r requirements.txt
 AGENT_API_KEY=my-secret-key python app.py
 
@@ -49,7 +57,11 @@ production/
 
 ### Chạy thử
 ```bash
+<<<<<<< HEAD
 cd production
+=======
+cd advanced
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 pip install -r requirements.txt
 python app.py
 
@@ -65,6 +77,7 @@ curl -H "Authorization: Bearer <token>" \
      -d '{"question": "what is docker?"}'
 
 # Test rate limit: spam 20 requests liên tiếp
+<<<<<<< HEAD
 # Lấy token rồi gửi 20 requests — request 11+ sẽ bị chặn (429)
 TOKEN=$(curl -s -X POST http://localhost:8000/auth/token \
      -H "Content-Type: application/json" \
@@ -79,6 +92,9 @@ for i in $(seq 1 20); do
        -d '{"question": "what is docker?"}' \
        | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('answer','')[:60] if 'answer' in d else f'❌ {d.get(\"detail\",d)}')"
 done
+=======
+python test_advanced.py --test rate-limit
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 ```
 
 ---

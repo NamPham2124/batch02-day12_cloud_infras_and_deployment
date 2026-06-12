@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 pyjwt>=2.9.0
 pydantic>=2.11.0
+=======
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+pyjwt==2.9.0
+pydantic==2.9.0
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d

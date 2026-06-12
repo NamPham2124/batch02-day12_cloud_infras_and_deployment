@@ -81,8 +81,12 @@ async def security_headers(request: Request, call_next):
     response.headers["X-XSS-Protection"] = "1; mode=block"
     response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
     # Ẩn server info
+<<<<<<< HEAD
     if "server" in response.headers:
         del response.headers["server"]
+=======
+    response.headers.pop("server", None)
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
     return response
 
 

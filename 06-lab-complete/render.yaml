@@ -1,2 +1,28 @@
+<<<<<<< HEAD
 # Canonical Render Blueprint is at repository root: ../render.yaml
 # Render uses the root-level file by default when creating a Blueprint.
+=======
+services:
+  - type: web
+    name: ai-agent-production
+    runtime: docker
+    region: singapore
+    plan: starter
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: APP_VERSION
+        value: "1.0.0"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: AGENT_API_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DAILY_BUDGET_USD
+        value: "5.0"
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "20"
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d

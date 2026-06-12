@@ -87,9 +87,13 @@ python app.py
 
 Test:
 ```bash
+<<<<<<< HEAD
 curl http://localhost:8000/ask -X POST \
   -H "Content-Type: application/json" \
   -d '{"question": "Hello"}'
+=======
+curl -X POST "http://localhost:8000/ask?question=hello"
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 ```
 
 **Quan sát:** Nó chạy! Nhưng có production-ready không?
@@ -929,4 +933,13 @@ A: Railway: `railway scale <replicas>`. Render: Dashboard → Settings → Insta
 
 ---
 
+<<<<<<< HEAD
+=======
+## Bonus Point Exercise
+1. Tạo 1 CICD pipeline bằng github actions để deploy app của bạn lên Railway / Render
+-  CI: có stage verify code lint, unitest coverage
+-  CD
+-  Demo để cộng điểm
+
+>>>>>>> 1bc3e8ea401ec09838476ee6810d4087387fcd6d
 **Happy Deploying! **
